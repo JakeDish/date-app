@@ -3,12 +3,12 @@ import Typography from "@mui/material/Typography";
 import Header from "../../components/Header";
 import Card from "../../components/Card";
 
-function Home() {
+function Matches() {
   return (
     <Grid container spacing={2}>
       <Grid display="flex" justifyContent="center" alignItems="center">
         <Header />
-        <Typography variant="h3"> Currently on MatchMaker</Typography>
+        <Typography variant="h3"> Your Matches</Typography>
         {/* dynamically render */}
         <Card />
       </Grid>
@@ -16,4 +16,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Matches;
