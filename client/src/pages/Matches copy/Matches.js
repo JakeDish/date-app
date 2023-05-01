@@ -1,7 +1,7 @@
 import Grid from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Header from "../../components/Header";
-import ProfileCard from "../../components/ProfileCard";
+import Card from "../../components/ProfileCard";
 
 function Matches() {
   return (
@@ -10,7 +10,7 @@ function Matches() {
         <Header />
         <Typography variant="h3"> Your Matches</Typography>
         {/* dynamically render */}
-        <ProfileCard />
+        <Card />
       </Grid>
     </Grid>
   );
