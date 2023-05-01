@@ -5,8 +5,18 @@
     "password": "password"
   },
   {
+    "name": "Gabriel",
+    "email": "gabriel@gmail.com",
+    "password": "password"
+  },
+  {
     "name": "Sia",
     "email": "sia@gmail.com",
+    "password": "password"
+  },
+  {
+    "name": "Eric",
+    "email": "eric@gmail.com",
     "password": "password"
   }
 ]
