@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../../utils/mutations";
+import Header from "../../components/Header";
 
 import Auth from "../../utils/auth.js";
 
@@ -31,6 +32,7 @@ function Login() {
   };
   return (
     <div>
+      <Header />
       <h1>Login Page</h1>
       <form onSubmit={handleFormSubmit}>
         <input

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { REGISTER_USER } from "../../utils/mutations";
+import Header from "../../components/Header";
 
 import Auth from "../../utils/auth.js";
 
@@ -32,6 +33,7 @@ function Register() {
   };
   return (
     <div>
+      <Header />
       <h1>Register Page</h1>
       <form onSubmit={handleFormSubmit}>
         <input
