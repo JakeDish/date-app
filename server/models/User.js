@@ -20,11 +20,11 @@ const userSchema = new Schema({
   },
   photo: {
     type: String,
-    required: true
+    // required: true
   },
   bio: {
     type: String,
-    required: true,
+    // required: true,
   },
   interests: {
     type: Array
