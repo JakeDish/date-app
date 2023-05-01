@@ -18,6 +18,17 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
+  photo: {
+    type: String,
+    // required: true
+  },
+  bio: {
+    type: String,
+    // required: true,
+  },
+  interests: {
+    type: Array
+  }
 });
 
 userSchema.pre("save", async function (next) {
