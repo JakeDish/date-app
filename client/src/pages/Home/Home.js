@@ -24,30 +24,24 @@ function Home() {
   console.log(allusers);
 
   return (
-    <Grid container spacing={2}>
-      <Grid display="flex" justifyContent="center" alignItems="center">
-        <Header />
-        {user ? (
-          <Typography variant="h3">
-            Welcome {user.name}. Currently on MatchMaker
-          </Typography>
-        ) : (
-          <Typography variant="h3"> No User Defined</Typography>
-        )}
-        {/* Render all users in ProfileCard component */}
-        {allusers
-          ? allusers.map((user) => {
-              return (
-                <ProfileCard
-                  image={user.photo}
-                  name={user.name}
-                  bio={user.bio}
-                />
-              );
-            })
-          : "No users"}
-      </Grid>
-    </Grid>
+    <div>
+      <Header />
+      {user ? (
+        <Typography variant="h3">
+          Welcome {user.name}. Currently on MatchMaker
+        </Typography>
+      ) : (
+        <Typography variant="h3"> No User Defined</Typography>
+      )}
+      {/* Render all users in ProfileCard component */}
+      {allusers
+        ? allusers.map((user) => {
+            return (
+              <ProfileCard image={user.photo} name={user.name} bio={user.bio} />
+            );
+          })
+        : "No users"}
+    </div>
   );
 }
 
