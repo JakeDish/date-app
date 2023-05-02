@@ -26,17 +26,22 @@ function Home() {
     <div>
       <Header />
       {user ? (
-        <Typography variant="h3">
+        <Typography variant="h4">
           Welcome {user.name}. Currently on MatchMaker
         </Typography>
       ) : (
-        <Typography variant="h3"> No User Defined</Typography>
+        <Typography variant="h4"> No User Defined</Typography>
       )}
       {/* Render all users in ProfileCard component */}
       {allusers
         ? allusers.map((user) => {
             return (
-              <ProfileCard image={user.photo} name={user.name} bio={user.bio} />
+              <ProfileCard
+                image={user.photo}
+                name={user.name}
+                bio={user.bio}
+                singleUser={user._id}
+              />
             );
           })
         : "No users"}
