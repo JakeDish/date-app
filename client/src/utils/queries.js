@@ -23,8 +23,9 @@ export const QUERY_USERS = gql`
 `;
 
 export const QUERY_USER = gql`
-  query user($userId: "64516d648189b1bb27c998f7") {
-    users(_id: $userId) {
+  query getUser($userId: ID!) {
+    user(userId: $userId) {
+      _id
       name
       email
       photo
@@ -32,4 +33,3 @@ export const QUERY_USER = gql`
     }
   }
 `;
-
