@@ -18,12 +18,12 @@ function Profile() {
     <div>
       <Header />
       <img src={user.photo} alt="user avatar" />
-      <Typography variant="h3">{user.name}'s Profile</Typography>
+      <Typography variant="h4">{user.name}'s Profile</Typography>
       {/* dynamically render */}
       <Typography
         variant="body2"
         color="text.secondary"
-        style={{ fontSize: "24px" }}
+        style={{ fontSize: "18px" }}
       >
         {user.bio}
       </Typography>
