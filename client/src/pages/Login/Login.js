@@ -38,19 +38,7 @@ function Login() {
       <Typography variant="h3">Login</Typography>
 
       <form onSubmit={handleFormSubmit}>
-        {/* <input
-          type="email"
-          name="email"
-          value={formState.email}
-          onChange={handleInputChange}
-        />
-        <input
-          type="password"
-          name="password"
-          value={formState.password}
-          onChange={handleInputChange}
-        />
-        <button type="submit">Login User</button> */}
+       
         <Box
           component="form"
           sx={{
