@@ -21,6 +21,8 @@ function Home() {
     allusers = data.users;
   }
 
+  console.log(allusers);
+
   return (
     <Grid container spacing={2}>
       <Grid display="flex" justifyContent="center" alignItems="center">
@@ -35,7 +37,13 @@ function Home() {
         {/* Render all users in ProfileCard component */}
         {allusers
           ? allusers.map((user) => {
-              return <ProfileCard name={user.name} />;
+              return (
+                <ProfileCard
+                  image={user.photo}
+                  name={user.name}
+                  bio={user.bio}
+                />
+              );
             })
           : "No users"}
       </Grid>

@@ -27,8 +27,8 @@ const userSchema = new Schema({
     // required: true,
   },
   interests: {
-    type: Array
-  }
+    type: Array,
+  },
 });
 
 userSchema.pre("save", async function (next) {

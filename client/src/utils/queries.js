@@ -16,6 +16,8 @@ export const QUERY_USERS = gql`
       _id
       name
       email
+      photo
+      bio
     }
   }
 `;
