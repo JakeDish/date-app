@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { REGISTER_USER } from "../../utils/mutations";
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -46,7 +45,7 @@ function Register() {
         <Box
           component="form"
           sx={{
-            "& > :not(style)": { m: 1, width: "25ch" },
+            "& > :not(style)": { m: 1, width: "50ch" },
           }}
           noValidate
           autoComplete="off"
@@ -64,7 +63,7 @@ function Register() {
         <Box
           component="form"
           sx={{
-            "& > :not(style)": { m: 1, width: "25ch" },
+            "& > :not(style)": { m: 1, width: "50ch" },
           }}
           noValidate
           autoComplete="off"
@@ -82,7 +81,7 @@ function Register() {
         <Box
           component="form"
           sx={{
-            "& > :not(style)": { m: 1, width: "25ch" },
+            "& > :not(style)": { m: 1, width: "50ch" },
           }}
           noValidate
           autoComplete="off"
@@ -101,14 +100,14 @@ function Register() {
         <Box
           component="form"
           sx={{
-            "& > :not(style)": { m: 1, width: "25ch" },
+            "& > :not(style)": { m: 1, width: "50ch" },
           }}
           noValidate
           autoComplete="off"
         >
           <TextField
             id="outlined-basic"
-            label="Location"
+            label="Photo"
             variant="outlined"
             // type="password"
             // name="password"
@@ -119,19 +118,17 @@ function Register() {
         <Box
           component="form"
           sx={{
-            "& > :not(style)": { m: 1, width: "25ch" },
+            "& > :not(style)": { m: 1, width: "50ch" },
           }}
           noValidate
           autoComplete="off"
         >
           <TextField
-            id="outlined-basic"
-            label="Age"
-            variant="outlined"
-            // type="password"
-            // name="password"
-            // value={formState.password}
-            // onChange={handleInputChange}
+            id="outlined-multiline-static"
+            label="Bio"
+          rows={4}
+            multiline
+            maxRows={4}
           />
         </Box>
         <Button variant="contained" type="submit">
