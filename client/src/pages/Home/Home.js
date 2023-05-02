@@ -1,4 +1,3 @@
-import Grid from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Header from "../../components/Header";
 import ProfileCard from "../../components/ProfileCard";

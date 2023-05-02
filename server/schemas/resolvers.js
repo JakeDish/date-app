@@ -13,6 +13,9 @@ const resolvers = {
     users: async (parent, args, context) => {
       return await User.find();
     },
+    user: async (parent, args) => {
+      return await User.findOne({ _id :usersId});
+    },
   },
   Mutation: {
     register: async (parent, { name, email, password }) => {

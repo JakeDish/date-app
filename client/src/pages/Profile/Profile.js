@@ -1,8 +1,18 @@
+import { useQuery } from "@apollo/client";
 import Grid from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Header from "../../components/Header";
+import { QUERY_USER } from "../../utils/queries";
+
+
 
 function Profile() {
+  const { error, data } = useQuery(QUERY_USER);
+  let user;
+  if (data) {
+    user = data.user;    
+  }
+  console.log(error)
   return (
     <Grid container spacing={2}>
       <Grid display="flex" justifyContent="center" alignItems="center">
