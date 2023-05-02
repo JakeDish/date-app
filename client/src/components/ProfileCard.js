@@ -1,8 +1,5 @@
 import * as React from "react";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
+import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Unstable_Grid2";
@@ -34,16 +31,17 @@ export default function ProfileCard(props) {
             <Typography
               variant="body2"
               color="text.secondary"
-              style={{ fontSize: "24px" }}
+              style={{ fontSize: "18px" }}
             >
               {props.bio}
             </Typography>
-            <Button size="small">View</Button>
+            <Link to={`/profile/${props.singleUser}`}>
+              <Button size="small">View</Button>
+            </Link>
           </div>
         </div>
       </Grid>
       <Grid xs={3}></Grid>
     </Grid>
-
   );
 }

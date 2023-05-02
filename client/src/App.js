@@ -42,7 +42,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/matches" element={<Matches />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/profile" element={<Profile />} />
+            {/* <Route path="/profile" element={<Profile />} /> */}
+            <Route path="/profile/:userId" element={<Profile />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
           </Routes>
