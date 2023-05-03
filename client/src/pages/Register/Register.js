@@ -140,7 +140,6 @@ function Register() {
                   onChange={handleInputChange}
                   rows={4}
                   multiline
-                  // maxRows={4}
                 />
               </Box>
               <Button variant="contained" type="submit">
