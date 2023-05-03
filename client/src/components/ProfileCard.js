@@ -36,7 +36,9 @@ export default function ProfileCard(props) {
               {props.bio}
             </Typography>
             <Link to={`/profile/${props.singleUser}`}>
-              <Button size="small">View</Button>
+              <Button variant="contained" size="medium">
+                View Profile
+              </Button>
             </Link>
           </div>
         </div>
