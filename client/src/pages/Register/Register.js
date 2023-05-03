@@ -21,6 +21,7 @@ function Register() {
     password: "",
     bio: "",
     photo: "",
+    interests: [],
   });
 
   const [register, { error, data }] = useMutation(REGISTER_USER);
@@ -28,6 +29,19 @@ function Register() {
   const handleInputChange = ({ target: { name, value } }) => {
     setFormState({ ...formState, [name]: value });
   };
+
+  const handleChecked = (e) => {
+    const { value, checked } = e.target;
+    const { interests } = formState;
+
+    if (checked) {
+      setFormState({
+        interests: [...interests, value],
+      });
+    }
+  };
+
+  console.log(formState);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -121,7 +135,6 @@ function Register() {
                   value={formState.photo}
                   onChange={handleInputChange}
                   variant="outlined"
-                  
                 />
               </Box>
               <Box
@@ -140,27 +153,87 @@ function Register() {
                   onChange={handleInputChange}
                   rows={4}
                   multiline
-                  // maxRows={4}
                 />
               </Box>
+
+              <FormGroup>
+                <FormControlLabel
+                  control={<Checkbox />}
+                  label="Traveling"
+                  value="traveling"
+                  onChange={handleChecked}
+                />
+                <FormControlLabel
+                  control={<Checkbox />}
+                  label="Cooking"
+                  value="cooking"
+                  onChange={handleChecked}
+                />
+                <FormControlLabel
+                  control={<Checkbox />}
+                  label="Fitness"
+                  value="fitness"
+                  onChange={handleChecked}
+                />
+                <FormControlLabel
+                  control={<Checkbox />}
+                  label="Music"
+                  value="music"
+                  onChange={handleChecked}
+                />
+                <FormControlLabel
+                  control={<Checkbox />}
+                  label="Art"
+                  value="art"
+                  onChange={handleChecked}
+                />
+                <FormControlLabel
+                  control={<Checkbox />}
+                  label="Sports"
+                  value="sports"
+                  onChange={handleChecked}
+                />
+                <FormControlLabel
+                  control={<Checkbox />}
+                  label="Reading"
+                  value="reading"
+                  onChange={handleChecked}
+                />
+                <FormControlLabel
+                  control={<Checkbox />}
+                  label="Movies"
+                  value="movies"
+                  onChange={handleChecked}
+                />
+                <FormControlLabel
+                  control={<Checkbox />}
+                  label="Photography"
+                  value="photography"
+                  onChange={handleChecked}
+                />
+                <FormControlLabel
+                  control={<Checkbox />}
+                  label="Fashion"
+                  value="fashion"
+                  onChange={handleChecked}
+                />
+                <FormControlLabel
+                  control={<Checkbox />}
+                  label="Gaming"
+                  value="gaming"
+                  onChange={handleChecked}
+                />
+                <FormControlLabel
+                  control={<Checkbox />}
+                  label="Technology"
+                  value="technology"
+                  onChange={handleChecked}
+                />
+              </FormGroup>
+
               <Button variant="contained" type="submit">
                 Register
               </Button>
-
-              <FormGroup>
-                <FormControlLabel control={<Checkbox />} label="Traveling" />
-                <FormControlLabel control={<Checkbox />} label="Cooking" />
-                <FormControlLabel control={<Checkbox />} label="Fitness" />
-                <FormControlLabel control={<Checkbox />} label="Music" />
-                <FormControlLabel control={<Checkbox />} label="Art" />
-                <FormControlLabel control={<Checkbox />} label="Sports" />
-                <FormControlLabel control={<Checkbox />} label="Reading" />
-                <FormControlLabel control={<Checkbox />} label="Movies" />
-                <FormControlLabel control={<Checkbox />} label="Photography" />
-                <FormControlLabel control={<Checkbox />} label="Fashion" />
-                <FormControlLabel control={<Checkbox />} label="Gaming" />
-                <FormControlLabel control={<Checkbox />} label="Technology" />
-              </FormGroup>
             </form>
           </Grid>
           <Grid xs={4}></Grid>
