@@ -53,7 +53,9 @@ export default function Header() {
             </Link>
           </Button>{" "}
           {data ? (
-            <Avatar alt="Remy Sharp" src={user.photo} />
+            <Link to="/dashboard">
+              <Avatar alt="Remy Sharp" src={user.photo} />
+            </Link>
           ) : (
             <AccountCircleIcon
               sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
