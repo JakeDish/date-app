@@ -1,10 +1,18 @@
+import { Link } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import Header from "../../components/Header";
 import ProfileCard from "../../components/ProfileCard";
+import Container from "../../components/Container";
 
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../../utils/queries";
 import { QUERY_USERS } from "../../utils/queries";
+
+const styles = {
+  links: {
+    color: "black",
+  },
+};
 
 function Home() {
   const loggedInUser = useQuery(QUERY_ME);
@@ -20,31 +28,41 @@ function Home() {
     allusers = data.users;
   }
 
-  console.log(allusers);
-
   return (
     <div>
       <Header />
-      {user ? (
-        <Typography variant="h4">
-          Welcome {user.name}. Currently on MatchMaker
-        </Typography>
-      ) : (
-        <Typography variant="h4"> No User Defined</Typography>
-      )}
-      {/* Render all users in ProfileCard component */}
-      {allusers
-        ? allusers.map((user) => {
-            return (
-              <ProfileCard
-                image={user.photo}
-                name={user.name}
-                bio={user.bio}
-                singleUser={user._id}
-              />
-            );
-          })
-        : "No users"}
+      <Container>
+        {user ? (
+          <Typography variant="h4" textAlign="center">
+            {user.name}, Welcome to MatchMaker.
+            <br />
+            Please browse to find your match!
+          </Typography>
+        ) : (
+          <Typography variant="h4" textAlign="center">
+            {" "}
+            Welcome to MatchMaker! <br />
+            Please{" "}
+            <Link to="/login" style={styles.links}>
+              login
+            </Link>{" "}
+            to see your potential matches!
+          </Typography>
+        )}
+        {/* Render all users in ProfileCard component */}
+        {allusers
+          ? allusers.map((user) => {
+              return (
+                <ProfileCard
+                  image={user.photo}
+                  name={user.name}
+                  bio={user.bio}
+                  singleUser={user._id}
+                />
+              );
+            })
+          : "No users"}
+      </Container>
     </div>
   );
 }

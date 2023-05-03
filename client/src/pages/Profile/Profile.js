@@ -3,6 +3,7 @@ import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import Header from "../../components/Header";
+import Container from "../../components/Container";
 import { QUERY_USER } from "../../utils/queries";
 
 function Profile() {
@@ -17,16 +18,18 @@ function Profile() {
   return (
     <div>
       <Header />
-      <img src={user.photo} alt="user avatar" />
-      <Typography variant="h4">{user.name}'s Profile</Typography>
-      {/* dynamically render */}
-      <Typography
-        variant="body2"
-        color="text.secondary"
-        style={{ fontSize: "18px" }}
-      >
-        {user.bio}
-      </Typography>
+      <Container>
+        <img src={user.photo} alt="user avatar" />
+        <Typography variant="h4">Meet {user.name}</Typography>
+        {/* dynamically render */}
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          style={{ fontSize: "18px" }}
+        >
+          {user.bio}
+        </Typography>
+      </Container>
     </div>
   );
 }
