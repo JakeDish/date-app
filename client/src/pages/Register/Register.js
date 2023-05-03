@@ -19,6 +19,8 @@ function Register() {
     name: "",
     email: "",
     password: "",
+    bio: "",
+    photo: "",
   });
 
   const [register, { error, data }] = useMutation(REGISTER_USER);
@@ -115,11 +117,11 @@ function Register() {
                 <TextField
                   id="outlined-basic"
                   label="Photo"
+                  name="photo"
+                  value={formState.photo}
+                  onChange={handleInputChange}
                   variant="outlined"
-                  // type="password"
-                  // name="password"
-                  // value={formState.password}
-                  // onChange={handleInputChange}
+                  
                 />
               </Box>
               <Box
@@ -133,9 +135,12 @@ function Register() {
                 <TextField
                   id="outlined-multiline-static"
                   label="Bio"
+                  name="bio"
+                  value={formState.bio}
+                  onChange={handleInputChange}
                   rows={4}
                   multiline
-                  maxRows={4}
+                  // maxRows={4}
                 />
               </Box>
               <Button variant="contained" type="submit">
