@@ -41,16 +41,19 @@ export default function Header() {
               MatchMaker{" "}
             </Link>
           </Typography>
-          <Link to="/login" style={styles.links}>
-            <Button color="inherit">Login</Button>{" "}
-          </Link>
           <Link to="/register" style={styles.links}>
-            <Button color="inherit">Register</Button>{" "}
+            <Button color="inherit">{data ? "" : "Register"} </Button>{" "}
           </Link>
           <Button color="inherit" onClick={() => Auth.logout()}>
-            <Link to="/" style={styles.links}>
-              Logout
-            </Link>
+            {data ? (
+              <Link to="/" style={styles.links}>
+                Logout
+              </Link>
+            ) : (
+              <Link to="/login" style={styles.links}>
+                Login
+              </Link>
+            )}
           </Button>{" "}
           {data ? (
             <Link to="/dashboard">
