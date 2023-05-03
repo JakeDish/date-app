@@ -156,80 +156,78 @@ function Register() {
                 />
               </Box>
 
-              <FormGroup>
-                <FormControlLabel
-                  control={<Checkbox />}
-                  label="Traveling"
-                  value="traveling"
-                  onChange={handleChecked}
-                />
-                <FormControlLabel
-                  control={<Checkbox />}
-                  label="Cooking"
-                  value="cooking"
-                  onChange={handleChecked}
-                />
-                <FormControlLabel
-                  control={<Checkbox />}
-                  label="Fitness"
-                  value="fitness"
-                  onChange={handleChecked}
-                />
-                <FormControlLabel
-                  control={<Checkbox />}
-                  label="Music"
-                  value="music"
-                  onChange={handleChecked}
-                />
-                <FormControlLabel
-                  control={<Checkbox />}
-                  label="Art"
-                  value="art"
-                  onChange={handleChecked}
-                />
-                <FormControlLabel
-                  control={<Checkbox />}
-                  label="Sports"
-                  value="sports"
-                  onChange={handleChecked}
-                />
-                <FormControlLabel
-                  control={<Checkbox />}
-                  label="Reading"
-                  value="reading"
-                  onChange={handleChecked}
-                />
-                <FormControlLabel
-                  control={<Checkbox />}
-                  label="Movies"
-                  value="movies"
-                  onChange={handleChecked}
-                />
-                <FormControlLabel
-                  control={<Checkbox />}
-                  label="Photography"
-                  value="photography"
-                  onChange={handleChecked}
-                />
-                <FormControlLabel
-                  control={<Checkbox />}
-                  label="Fashion"
-                  value="fashion"
-                  onChange={handleChecked}
-                />
-                <FormControlLabel
-                  control={<Checkbox />}
-                  label="Gaming"
-                  value="gaming"
-                  onChange={handleChecked}
-                />
-                <FormControlLabel
-                  control={<Checkbox />}
-                  label="Technology"
-                  value="technology"
-                  onChange={handleChecked}
-                />
-              </FormGroup>
+              <FormControlLabel
+                control={<Checkbox />}
+                label="Traveling"
+                value="traveling"
+                onChange={handleChecked}
+              />
+              <FormControlLabel
+                control={<Checkbox />}
+                label="Cooking"
+                value="cooking"
+                onChange={handleChecked}
+              />
+              <FormControlLabel
+                control={<Checkbox />}
+                label="Fitness"
+                value="fitness"
+                onChange={handleChecked}
+              />
+              <FormControlLabel
+                control={<Checkbox />}
+                label="Music"
+                value="music"
+                onChange={handleChecked}
+              />
+              <FormControlLabel
+                control={<Checkbox />}
+                label="Art"
+                value="art"
+                onChange={handleChecked}
+              />
+              <FormControlLabel
+                control={<Checkbox />}
+                label="Sports"
+                value="sports"
+                onChange={handleChecked}
+              />
+              <FormControlLabel
+                control={<Checkbox />}
+                label="Reading"
+                value="reading"
+                onChange={handleChecked}
+              />
+              <FormControlLabel
+                control={<Checkbox />}
+                label="Movies"
+                value="movies"
+                onChange={handleChecked}
+              />
+              <FormControlLabel
+                control={<Checkbox />}
+                label="Photography"
+                value="photography"
+                onChange={handleChecked}
+              />
+              <FormControlLabel
+                control={<Checkbox />}
+                label="Fashion"
+                value="fashion"
+                onChange={handleChecked}
+              />
+              <FormControlLabel
+                control={<Checkbox />}
+                label="Gaming"
+                value="gaming"
+                onChange={handleChecked}
+              />
+              <FormControlLabel
+                control={<Checkbox />}
+                label="Technology"
+                value="technology"
+                onChange={handleChecked}
+              />
 
               <Button variant="contained" type="submit">
                 Register
