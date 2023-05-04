@@ -8,7 +8,7 @@ import Button from "@mui/material/Button";
 import Heart from "@mui/icons-material/FavoriteBorder";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Avatar from "@mui/material/Avatar";
-
+import Diversity1Icon from "@mui/icons-material/Diversity1";
 import Auth from "../utils/auth";
 import { QUERY_ME } from "../utils/queries";
 import { useQuery } from "@apollo/client";
@@ -40,7 +40,16 @@ export default function Header() {
             </Link>
           </Typography>
           <Link to="/matches" style={styles.links}>
-            {user ? <Button color="inherit">YOUR MATCHES </Button> : ""}
+            {user ? (
+              <Button color="inherit">
+                <Diversity1Icon
+                  sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+                />
+                YOUR MATCHES{" "}
+              </Button>
+            ) : (
+              ""
+            )}
           </Link>
           <Link to="/register" style={styles.links}>
             {user ? "" : <Button color="inherit">Register </Button>}
