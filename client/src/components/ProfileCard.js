@@ -12,7 +12,7 @@ export default function ProfileCard(props) {
       <Grid xs={6}>
         <div
           style={{
-            border: "1px solid gray",
+            border: "3px solid #5F5980",
             borderRadius: "8px",
             margin: "20px 0",
             display: "flex",
@@ -60,7 +60,11 @@ export default function ProfileCard(props) {
             </Typography>
             {props.loggedIn ? (
               <Link to={`/profile/${props.singleUser}`}>
-                <Button variant="contained" size="medium">
+                <Button
+                  variant="contained"
+                  size="medium"
+                  style={{ backgroundColor: "#0E34A0", color: "white" }}
+                >
                   View Profile
                 </Button>
               </Link>
@@ -69,9 +73,9 @@ export default function ProfileCard(props) {
                 <Button
                   variant="contained"
                   size="medium"
-                  style={{ backgroundColor: "#bcced1", color: "black" }}
+                  style={{ backgroundColor: "#0E34A0", color: "white" }}
                 >
-                  Please Login to View Profile
+                  Login to View Profile
                 </Button>
               </Link>
             )}

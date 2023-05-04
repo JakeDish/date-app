@@ -6,6 +6,8 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
 
 import Home from "./pages/Home";
 import Matches from "./pages/Matches";
@@ -16,6 +18,13 @@ import Register from "./pages/Register";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
+});
+
+
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+  },
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -36,20 +45,23 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Router>
-        <div>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/matches" element={<Matches />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            {/* <Route path="/profile" element={<Profile />} /> */}
-            <Route path="/profile/:userId" element={<Profile />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/matches" element={<Matches />} />
-          </Routes>
-        </div>
-      </Router>
+      <ThemeProvider theme={darkTheme}>
+        <CssBaseline />
+        <Router>
+          <div>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/matches" element={<Matches />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              {/* <Route path="/profile" element={<Profile />} /> */}
+              <Route path="/profile/:userId" element={<Profile />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/matches" element={<Matches />} />
+            </Routes>
+          </div>
+        </Router>
+      </ThemeProvider>
     </ApolloProvider>
   );
 }
