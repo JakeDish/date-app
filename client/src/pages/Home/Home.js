@@ -3,8 +3,6 @@ import Typography from "@mui/material/Typography";
 import Header from "../../components/Header";
 import ProfileCard from "../../components/ProfileCard";
 import Container from "../../components/Container";
-import Yoda from "../../img/Yoda.webp";
-
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../../utils/queries";
 import { QUERY_USERS } from "../../utils/queries";
@@ -61,14 +59,16 @@ function Home() {
                       name={singleUser.name}
                       bio={singleUser.bio}
                       singleUser={singleUser._id}
+                      loggedIn={user}
                       key={singleUser._id}
                     />
                   ) : (
                     <ProfileCard
-                      image={Yoda}
+                      image={singleUser.photo}
                       name={singleUser.name}
                       bio={singleUser.bio}
                       singleUser={singleUser._id}
+                      loggedIn={user}
                       key={singleUser._id}
                     />
                   )}
