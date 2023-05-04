@@ -30,7 +30,7 @@ const styles = {
     height: "100%",
   },
   heroText: {
-    paddingTop: "12%",
+    paddingTop: "8%",
   },
   links: {
     color: "black",
@@ -59,11 +59,27 @@ function Home() {
         <div style={styles.heroInner}>
           <div style={styles.heroText}>
             {user ? (
-              <Typography variant="h4" textAlign="center">
-                {user.name}, Welcome to MatchMaker.
-                <br />
-                Please browse to find your match!
-              </Typography>
+              <>
+                <Typography
+                  variant="h2"
+                  textAlign="center"
+                  sx={{ fontWeight: "900" }}
+                >
+                  {user.name}
+                </Typography>
+                <Typography variant="h4" textAlign="center">
+                  <div style={{ marginBottom: "24px" }}>
+                    Welcome to MatchMaker.
+                    <br />
+                    Please browse to find your match!
+                  </div>
+                  <Link to="/dashboard" style={styles.links}>
+                    <Button size="large" color="primary" variant="outlined">
+                      View Your Dashboard
+                    </Button>
+                  </Link>
+                </Typography>
+              </>
             ) : (
               <Typography variant="h4" textAlign="center">
                 <div style={{ marginBottom: "24px" }}>

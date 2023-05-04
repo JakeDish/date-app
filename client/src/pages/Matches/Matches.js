@@ -33,22 +33,23 @@ function Matches() {
       <Header />
       <Container>
         <Typography variant="h3" align="center">
-          {" "}
-          Your Matches
+          {user.name}, here are your matches!
         </Typography>
         {/* dynamically render */}
         <div style={{ display: "flex", marginTop: "40px" }}>
           {allusers && (
             <>
               {allusers.map((item) => {
-                // console.log(item.interests);
                 if (
                   userInterests.includes(item.interests) &&
                   user._id !== item._id
                 ) {
                   return (
                     <>
-                      <Card sx={{ maxWidth: 345, marginRight: "40px" }} key={item._id}>
+                      <Card
+                        sx={{ maxWidth: 345, marginRight: "40px" }}
+                        key={item._id}
+                      >
                         <CardMedia
                           sx={{ height: 240 }}
                           image={item.photo}
@@ -68,11 +69,25 @@ function Matches() {
                               style={{
                                 backgroundColor: "#0E34A0",
                                 color: "white",
+                                marginTop: "20px",
                               }}
                             >
                               View Profile
                             </Button>
                           </Link>
+                          <br />
+                          <a href={`mailto:${item.email}`} target="_blank">
+                            <Button
+                              variant="outlined"
+                              size="medium"
+                              style={{
+                                color: "white",
+                                marginTop: "20px",
+                              }}
+                            >
+                              Contact
+                            </Button>
+                          </a>
                         </CardContent>
                       </Card>
                     </>
@@ -83,7 +98,7 @@ function Matches() {
           )}
         </div>
       </Container>
-      <Footer/>
+      <Footer />
     </>
   );
 }
