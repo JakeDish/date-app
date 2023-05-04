@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import ProfileCard from "../../components/ProfileCard";
 import Container from "../../components/Container";
 import Button from "@mui/material/Button";
@@ -85,6 +86,7 @@ function Home() {
             })
           : "No users"}
       </Container>
+      <Footer />
     </div>
   );
 }
