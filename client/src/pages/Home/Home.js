@@ -3,6 +3,7 @@ import Typography from "@mui/material/Typography";
 import Header from "../../components/Header";
 import ProfileCard from "../../components/ProfileCard";
 import Container from "../../components/Container";
+import Button from "@mui/material/Button";
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../../utils/queries";
 import { QUERY_USERS } from "../../utils/queries";
@@ -10,6 +11,7 @@ import { QUERY_USERS } from "../../utils/queries";
 const styles = {
   links: {
     color: "black",
+    marginRight: "10px",
   },
 };
 
@@ -39,13 +41,19 @@ function Home() {
           </Typography>
         ) : (
           <Typography variant="h4" textAlign="center">
-            {" "}
             Welcome to MatchMaker! <br />
-            Please{" "}
+            Sign up today to see your matches!
+            <br />
+            <Link to="/register" style={styles.links}>
+              <Button size="large" color="primary" variant="outlined">
+                SIGN UP!
+              </Button>
+            </Link>
             <Link to="/login" style={styles.links}>
-              login
-            </Link>{" "}
-            to see your potential matches!
+              <Button size="large" color="primary" variant="outlined">
+                Login
+              </Button>
+            </Link>
           </Typography>
         )}
         {/* Render all users in ProfileCard component */}
