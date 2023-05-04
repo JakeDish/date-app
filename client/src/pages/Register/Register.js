@@ -35,14 +35,8 @@ function Register() {
     const { interests } = formState;
 
     if (checked) {
-      // setFormState({
-      //   interests: [...interests, value],
-      // });
       setFormState((prev) => ({ ...prev, interests: [...interests, value] }));
     } else {
-      // setFormState({
-      //   interests: interests.filter((e) => e !== value),
-      // });
       setFormState((prev) => ({
         ...prev,
         interests: interests.filter((e) => e !== value),
@@ -165,8 +159,26 @@ function Register() {
                     multiline
                   />
                 </Box>
+                <Box
+                  component="form"
+                  sx={{
+                    "& > :not(style)": { m: 1, width: "50ch" },
+                  }}
+                  noValidate
+                  autoComplete="off"
+                >
+                  <TextField
+                    id="outlined-multiline-static"
+                    label="Interests"
+                    name="interests"
+                    value={formState.interests}
+                    onChange={handleInputChange}
+                    rows={4}
+                    multiline
+                  />
+                </Box>
 
-                <FormControlLabel
+                {/* <FormControlLabel
                   control={<Checkbox />}
                   label="Traveling"
                   value="traveling"
@@ -237,7 +249,7 @@ function Register() {
                   label="Technology"
                   value="technology"
                   onChange={handleChecked}
-                />
+                /> */}
 
                 <Button variant="contained" type="submit">
                   Register

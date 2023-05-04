@@ -18,13 +18,17 @@ const resolvers = {
     },
   },
   Mutation: {
-    register: async (parent, { name, email, password, bio, photo }) => {
+    register: async (
+      parent,
+      { name, email, password, bio, photo, interests }
+    ) => {
       const user = await User.create({
         name,
         email,
         password,
         bio,
         photo,
+        interests,
       });
       const token = signToken(user);
       return { token, user };

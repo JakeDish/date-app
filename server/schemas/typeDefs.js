@@ -8,6 +8,7 @@ const typeDefs = gql`
     password: String
     photo: String
     bio: String
+    interests: String
   }
 
   type Auth {
@@ -28,6 +29,7 @@ const typeDefs = gql`
       password: String!
       bio: String!
       photo: String!
+      interests: String!
     ): Auth
     login(email: String!, password: String!): Auth
   }

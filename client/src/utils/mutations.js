@@ -7,6 +7,7 @@ export const REGISTER_USER = gql`
     $password: String!
     $bio: String!
     $photo: String!
+    $interests: String!
   ) {
     register(
       name: $name
@@ -14,6 +15,7 @@ export const REGISTER_USER = gql`
       password: $password
       bio: $bio
       photo: $photo
+      interests: $interests
     ) {
       token
       user {
@@ -22,6 +24,7 @@ export const REGISTER_USER = gql`
         email
         bio
         photo
+        interests
       }
     }
   }
