@@ -8,10 +8,11 @@ import Button from "@mui/material/Button";
 import Heart from "@mui/icons-material/FavoriteBorder";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Avatar from "@mui/material/Avatar";
-
+import Diversity1Icon from "@mui/icons-material/Diversity1";
 import Auth from "../utils/auth";
 import { QUERY_ME } from "../utils/queries";
 import { useQuery } from "@apollo/client";
+import "animate.css";
 
 const styles = {
   links: {
@@ -28,8 +29,6 @@ export default function Header() {
     user = data.me;
   }
 
-  console.log(user);
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -41,11 +40,27 @@ export default function Header() {
               MatchMaker{" "}
             </Link>
           </Typography>
+          <Link to="/matches" style={styles.links}>
+            {user ? (
+              <Button
+                color="inherit"
+                variant="outlined"
+                className="animate__animated animate__infinite	infinite animate__pulse"
+              >
+                <Diversity1Icon
+                  sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+                />
+                YOUR MATCHES{" "}
+              </Button>
+            ) : (
+              ""
+            )}
+          </Link>
           <Link to="/register" style={styles.links}>
-            <Button color="inherit">{data ? "" : "Register"} </Button>{" "}
+            {user ? "" : <Button color="inherit">Register </Button>}
           </Link>
           <Button color="inherit" onClick={() => Auth.logout()}>
-            {data ? (
+            {user ? (
               <Link to="/" style={styles.links}>
                 Logout
               </Link>
@@ -55,7 +70,7 @@ export default function Header() {
               </Link>
             )}
           </Button>{" "}
-          {data ? (
+          {user ? (
             <Link to="/dashboard">
               <Avatar alt="Remy Sharp" src={user.photo} />
             </Link>

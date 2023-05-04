@@ -27,7 +27,7 @@ const userSchema = new Schema({
     // required: true,
   },
   interests: {
-    type: Array,
+    type: String,
   },
 });
 

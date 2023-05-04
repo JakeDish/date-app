@@ -34,6 +34,7 @@ function Login() {
       Auth.login(data.login.token);
     } catch (err) {}
   };
+
   return (
     <div>
       <Header />

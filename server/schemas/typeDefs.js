@@ -8,6 +8,7 @@ const typeDefs = gql`
     password: String
     photo: String
     bio: String
+    interests: String
   }
 
   type Auth {
@@ -22,7 +23,14 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    register(name: String!, email: String!, password: String!, bio: String!, photo: String!): Auth
+    register(
+      name: String!
+      email: String!
+      password: String!
+      bio: String!
+      photo: String!
+      interests: String!
+    ): Auth
     login(email: String!, password: String!): Auth
   }
 `;
