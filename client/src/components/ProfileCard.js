@@ -65,11 +65,11 @@ export default function ProfileCard(props) {
                 </Button>
               </Link>
             ) : (
-              <Link to={`/profile/${props.singleUser}`}>
+              <Link to={`/`}>
                 <Button
                   variant="contained"
                   size="medium"
-                  style={{ backgroundColor: "gray" }}
+                  style={{ backgroundColor: "#bcced1", color: "black" }}
                 >
                   Please Login to View Profile
                 </Button>
