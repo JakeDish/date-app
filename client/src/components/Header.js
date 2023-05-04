@@ -28,8 +28,6 @@ export default function Header() {
     user = data.me;
   }
 
-  console.log(user);
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">

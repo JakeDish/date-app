@@ -21,7 +21,7 @@ function Register() {
     password: "",
     bio: "",
     photo: "",
-    interests: [],
+    interests: "",
   });
 
   const [register, { error, data }] = useMutation(REGISTER_USER);
@@ -35,9 +35,18 @@ function Register() {
     const { interests } = formState;
 
     if (checked) {
-      setFormState({
-        interests: [...interests, value],
-      });
+      // setFormState({
+      //   interests: [...interests, value],
+      // });
+      setFormState((prev) => ({ ...prev, interests: [...interests, value] }));
+    } else {
+      // setFormState({
+      //   interests: interests.filter((e) => e !== value),
+      // });
+      setFormState((prev) => ({
+        ...prev,
+        interests: interests.filter((e) => e !== value),
+      }));
     }
   };
 
@@ -64,175 +73,177 @@ function Register() {
           <Grid xs={4}></Grid>
           <Grid xs={4}>
             <Typography variant="h3">Register</Typography>
-            <form onSubmit={handleFormSubmit}>
-              <Box
-                component="form"
-                sx={{
-                  "& > :not(style)": { m: 1, width: "50ch" },
-                }}
-                noValidate
-                autoComplete="off"
-              >
-                <TextField
-                  id="outlined-basic"
-                  label="Name"
-                  variant="outlined"
-                  type="text"
-                  name="name"
-                  value={formState.name}
-                  onChange={handleInputChange}
-                />
-              </Box>
-              <Box
-                component="form"
-                sx={{
-                  "& > :not(style)": { m: 1, width: "50ch" },
-                }}
-                noValidate
-                autoComplete="off"
-              >
-                <TextField
-                  id="outlined-basic"
-                  label="Email"
-                  variant="outlined"
-                  type="email"
-                  name="email"
-                  value={formState.email}
-                  onChange={handleInputChange}
-                />
-              </Box>
-              <Box
-                component="form"
-                sx={{
-                  "& > :not(style)": { m: 1, width: "50ch" },
-                }}
-                noValidate
-                autoComplete="off"
-              >
-                <TextField
-                  id="outlined-basic"
-                  label="Password"
-                  variant="outlined"
-                  type="password"
-                  name="password"
-                  value={formState.password}
-                  onChange={handleInputChange}
-                />
-              </Box>
+            <FormGroup>
+              <form onSubmit={handleFormSubmit}>
+                <Box
+                  component="form"
+                  sx={{
+                    "& > :not(style)": { m: 1, width: "50ch" },
+                  }}
+                  noValidate
+                  autoComplete="off"
+                >
+                  <TextField
+                    id="outlined-basic"
+                    label="Name"
+                    variant="outlined"
+                    type="text"
+                    name="name"
+                    value={formState.name}
+                    onChange={handleInputChange}
+                  />
+                </Box>
+                <Box
+                  component="form"
+                  sx={{
+                    "& > :not(style)": { m: 1, width: "50ch" },
+                  }}
+                  noValidate
+                  autoComplete="off"
+                >
+                  <TextField
+                    id="outlined-basic"
+                    label="Email"
+                    variant="outlined"
+                    type="email"
+                    name="email"
+                    value={formState.email}
+                    onChange={handleInputChange}
+                  />
+                </Box>
+                <Box
+                  component="form"
+                  sx={{
+                    "& > :not(style)": { m: 1, width: "50ch" },
+                  }}
+                  noValidate
+                  autoComplete="off"
+                >
+                  <TextField
+                    id="outlined-basic"
+                    label="Password"
+                    variant="outlined"
+                    type="password"
+                    name="password"
+                    value={formState.password}
+                    onChange={handleInputChange}
+                  />
+                </Box>
 
-              <Box
-                component="form"
-                sx={{
-                  "& > :not(style)": { m: 1, width: "50ch" },
-                }}
-                noValidate
-                autoComplete="off"
-              >
-                <TextField
-                  id="outlined-basic"
-                  label="Photo"
-                  name="photo"
-                  value={formState.photo}
-                  onChange={handleInputChange}
-                  variant="outlined"
-                />
-              </Box>
-              <Box
-                component="form"
-                sx={{
-                  "& > :not(style)": { m: 1, width: "50ch" },
-                }}
-                noValidate
-                autoComplete="off"
-              >
-                <TextField
-                  id="outlined-multiline-static"
-                  label="Bio"
-                  name="bio"
-                  value={formState.bio}
-                  onChange={handleInputChange}
-                  rows={4}
-                  multiline
-                />
-              </Box>
+                <Box
+                  component="form"
+                  sx={{
+                    "& > :not(style)": { m: 1, width: "50ch" },
+                  }}
+                  noValidate
+                  autoComplete="off"
+                >
+                  <TextField
+                    id="outlined-basic"
+                    label="Photo"
+                    name="photo"
+                    value={formState.photo}
+                    onChange={handleInputChange}
+                    variant="outlined"
+                  />
+                </Box>
+                <Box
+                  component="form"
+                  sx={{
+                    "& > :not(style)": { m: 1, width: "50ch" },
+                  }}
+                  noValidate
+                  autoComplete="off"
+                >
+                  <TextField
+                    id="outlined-multiline-static"
+                    label="Bio"
+                    name="bio"
+                    value={formState.bio}
+                    onChange={handleInputChange}
+                    rows={4}
+                    multiline
+                  />
+                </Box>
 
-              <FormControlLabel
-                control={<Checkbox />}
-                label="Traveling"
-                value="traveling"
-                onChange={handleChecked}
-              />
-              <FormControlLabel
-                control={<Checkbox />}
-                label="Cooking"
-                value="cooking"
-                onChange={handleChecked}
-              />
-              <FormControlLabel
-                control={<Checkbox />}
-                label="Fitness"
-                value="fitness"
-                onChange={handleChecked}
-              />
-              <FormControlLabel
-                control={<Checkbox />}
-                label="Music"
-                value="music"
-                onChange={handleChecked}
-              />
-              <FormControlLabel
-                control={<Checkbox />}
-                label="Art"
-                value="art"
-                onChange={handleChecked}
-              />
-              <FormControlLabel
-                control={<Checkbox />}
-                label="Sports"
-                value="sports"
-                onChange={handleChecked}
-              />
-              <FormControlLabel
-                control={<Checkbox />}
-                label="Reading"
-                value="reading"
-                onChange={handleChecked}
-              />
-              <FormControlLabel
-                control={<Checkbox />}
-                label="Movies"
-                value="movies"
-                onChange={handleChecked}
-              />
-              <FormControlLabel
-                control={<Checkbox />}
-                label="Photography"
-                value="photography"
-                onChange={handleChecked}
-              />
-              <FormControlLabel
-                control={<Checkbox />}
-                label="Fashion"
-                value="fashion"
-                onChange={handleChecked}
-              />
-              <FormControlLabel
-                control={<Checkbox />}
-                label="Gaming"
-                value="gaming"
-                onChange={handleChecked}
-              />
-              <FormControlLabel
-                control={<Checkbox />}
-                label="Technology"
-                value="technology"
-                onChange={handleChecked}
-              />
+                <FormControlLabel
+                  control={<Checkbox />}
+                  label="Traveling"
+                  value="traveling"
+                  onChange={handleChecked}
+                />
+                <FormControlLabel
+                  control={<Checkbox />}
+                  label="Cooking"
+                  value="cooking"
+                  onChange={handleChecked}
+                />
+                <FormControlLabel
+                  control={<Checkbox />}
+                  label="Fitness"
+                  value="fitness"
+                  onChange={handleChecked}
+                />
+                <FormControlLabel
+                  control={<Checkbox />}
+                  label="Music"
+                  value="music"
+                  onChange={handleChecked}
+                />
+                <FormControlLabel
+                  control={<Checkbox />}
+                  label="Art"
+                  value="art"
+                  onChange={handleChecked}
+                />
+                <FormControlLabel
+                  control={<Checkbox />}
+                  label="Sports"
+                  value="sports"
+                  onChange={handleChecked}
+                />
+                <FormControlLabel
+                  control={<Checkbox />}
+                  label="Reading"
+                  value="reading"
+                  onChange={handleChecked}
+                />
+                <FormControlLabel
+                  control={<Checkbox />}
+                  label="Movies"
+                  value="movies"
+                  onChange={handleChecked}
+                />
+                <FormControlLabel
+                  control={<Checkbox />}
+                  label="Photography"
+                  value="photography"
+                  onChange={handleChecked}
+                />
+                <FormControlLabel
+                  control={<Checkbox />}
+                  label="Fashion"
+                  value="fashion"
+                  onChange={handleChecked}
+                />
+                <FormControlLabel
+                  control={<Checkbox />}
+                  label="Gaming"
+                  value="gaming"
+                  onChange={handleChecked}
+                />
+                <FormControlLabel
+                  control={<Checkbox />}
+                  label="Technology"
+                  value="technology"
+                  onChange={handleChecked}
+                />
 
-              <Button variant="contained" type="submit">
-                Register
-              </Button>
-            </form>
+                <Button variant="contained" type="submit">
+                  Register
+                </Button>
+              </form>
+            </FormGroup>
           </Grid>
           <Grid xs={4}></Grid>
         </Grid>
