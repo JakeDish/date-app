@@ -12,6 +12,7 @@ import Diversity1Icon from "@mui/icons-material/Diversity1";
 import Auth from "../utils/auth";
 import { QUERY_ME } from "../utils/queries";
 import { useQuery } from "@apollo/client";
+import "animate.css";
 
 const styles = {
   links: {
@@ -41,7 +42,11 @@ export default function Header() {
           </Typography>
           <Link to="/matches" style={styles.links}>
             {user ? (
-              <Button color="inherit" variant="outlined">
+              <Button
+                color="inherit"
+                variant="outlined"
+                className="animate__animated animate__infinite	infinite animate__pulse"
+              >
                 <Diversity1Icon
                   sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
                 />
