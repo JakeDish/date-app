@@ -29,7 +29,6 @@ const darkTheme = createTheme({
 
 const styles = {
   background: {
-    // background: "rgb(47,48,97)",
     background: "linear-gradient(90deg, rgba(47,48,97,1) 0%, rgba(9,9,121,1) 45%, rgba(30,30,61,1) 100%)",
 }
 }
@@ -61,7 +60,6 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/matches" element={<Matches />} />
               <Route path="/dashboard" element={<Dashboard />} />
-              {/* <Route path="/profile" element={<Profile />} /> */}
               <Route path="/profile/:userId" element={<Profile />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />

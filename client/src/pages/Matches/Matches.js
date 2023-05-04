@@ -33,11 +33,10 @@ function Matches() {
           {" "}
           Your Matches
         </Typography>
-        {/* dynamically render */}
+
         {allusers && (
           <>
             {allusers.map((item) => {
-              // console.log(item.interests);
               if (
                 userInterests.includes(item.interests) &&
                 user._id !== item._id

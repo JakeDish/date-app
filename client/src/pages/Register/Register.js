@@ -6,8 +6,6 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import FormGroup from "@mui/material/FormGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Container from "../../components/Container";
 import Header from "../../components/Header";
 
@@ -24,25 +22,12 @@ function Register() {
     interests: "",
   });
 
-  const [register, { error, data }] = useMutation(REGISTER_USER);
+  const [register] = useMutation(REGISTER_USER);
 
   const handleInputChange = ({ target: { name, value } }) => {
     setFormState({ ...formState, [name]: value });
   };
 
-  const handleChecked = (e) => {
-    const { value, checked } = e.target;
-    const { interests } = formState;
-
-    if (checked) {
-      setFormState((prev) => ({ ...prev, interests: [...interests, value] }));
-    } else {
-      setFormState((prev) => ({
-        ...prev,
-        interests: interests.filter((e) => e !== value),
-      }));
-    }
-  };
 
   console.log(formState);
 
