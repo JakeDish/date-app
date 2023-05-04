@@ -3,6 +3,7 @@ import Typography from "@mui/material/Typography";
 import Header from "../../components/Header";
 import ProfileCard from "../../components/ProfileCard";
 import Container from "../../components/Container";
+import Yoda from "../../img/Yoda.webp";
 
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../../utils/queries";
@@ -51,14 +52,27 @@ function Home() {
         )}
         {/* Render all users in ProfileCard component */}
         {allusers
-          ? allusers.map((user) => {
+          ? allusers.map((singleUser) => {
               return (
-                <ProfileCard
-                  image={user.photo}
-                  name={user.name}
-                  bio={user.bio}
-                  singleUser={user._id}
-                />
+                <>
+                  {user ? (
+                    <ProfileCard
+                      image={singleUser.photo}
+                      name={singleUser.name}
+                      bio={singleUser.bio}
+                      singleUser={singleUser._id}
+                      key={singleUser._id}
+                    />
+                  ) : (
+                    <ProfileCard
+                      image={Yoda}
+                      name={singleUser.name}
+                      bio={singleUser.bio}
+                      singleUser={singleUser._id}
+                      key={singleUser._id}
+                    />
+                  )}
+                </>
               );
             })
           : "No users"}

@@ -7,6 +7,8 @@ export const QUERY_ME = gql`
       name
       email
       photo
+      bio
+      interests
     }
   }
 `;
@@ -19,6 +21,7 @@ export const QUERY_USERS = gql`
       email
       photo
       bio
+      interests
     }
   }
 `;
@@ -31,6 +34,7 @@ export const QUERY_USER = gql`
       email
       photo
       bio
+      interests
     }
   }
 `;

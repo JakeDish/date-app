@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Unstable_Grid2";
 
+
 export default function ProfileCard(props) {
   return (
     <Grid container spacing={2}>
@@ -17,11 +18,13 @@ export default function ProfileCard(props) {
             display: "flex",
           }}
         >
-          <div style={{ padding: "40px" }}>
+          <div style={{ 
+            padding: "40px",
+            width: '400px' }}>
             <img
               src={props.image}
               alt="profileImage"
-              style={{ border: "1px solid black", borderRadius: "8px" }}
+              style={{ border: "1px solid black", borderRadius: "8px", width: "300px" }}
             />{" "}
           </div>
           <div style={{ padding: "40px" }}>
