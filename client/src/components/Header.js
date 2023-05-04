@@ -30,8 +30,8 @@ export default function Header() {
   }
 
   return (
-    <Box sx={{ flexGrow: 1, }}>
-      <AppBar sx={{ backgroundColor: "#2F3061" }} position="static">
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar sx={{ backgroundColor: "#130C11" }} position="static">
         <Toolbar>
           <Heart sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -44,7 +44,11 @@ export default function Header() {
             {user ? (
               <Button
                 // color="inherit"
-                sx={{color: "#ED254E", fontWeight: "900", border: "2px solid #ED254E"}}
+                sx={{
+                  color: "#ED254E",
+                  fontWeight: "900",
+                  border: "2px solid #ED254E",
+                }}
                 variant="outlined"
                 className="animate__animated animate__infinite	infinite animate__pulse"
               >

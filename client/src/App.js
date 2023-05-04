@@ -27,6 +27,13 @@ const darkTheme = createTheme({
   },
 });
 
+const styles = {
+  background: {
+    // background: "rgb(47,48,97)",
+    background: "linear-gradient(90deg, rgba(47,48,97,1) 0%, rgba(9,9,121,1) 45%, rgba(30,30,61,1) 100%)",
+}
+}
+
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem("auth_token");
   return {
@@ -48,7 +55,8 @@ function App() {
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
         <Router>
-          <div>
+          <div 
+          style={styles.background}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/matches" element={<Matches />} />
