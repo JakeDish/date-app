@@ -41,7 +41,7 @@ export default function Header() {
           </Typography>
           <Link to="/matches" style={styles.links}>
             {user ? (
-              <Button color="inherit">
+              <Button color="inherit" variant="outlined">
                 <Diversity1Icon
                   sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
                 />
