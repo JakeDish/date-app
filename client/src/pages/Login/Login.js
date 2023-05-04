@@ -6,6 +6,7 @@ import Grid from "@mui/material/Unstable_Grid2";
 import Header from "../../components/Header";
 import Container from "../../components/Container";
 import Auth from "../../utils/auth.js";
+import Footer from "../../components/Footer";
 
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
@@ -89,6 +90,7 @@ function Login() {
           <Grid xs={4}></Grid>
         </Grid>
       </Container>
+      <Footer/>
     </div>
   );
 }

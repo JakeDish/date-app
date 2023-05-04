@@ -10,6 +10,7 @@ import Typography from "@mui/material/Typography";
 import Header from "../../components/Header";
 import Container from "../../components/Container";
 import { QUERY_USER } from "../../utils/queries";
+import Footer from "../../components/Footer";
 
 const styles = {
   iconStyle: {
@@ -100,6 +101,7 @@ function Profile() {
           <Grid xs={2}></Grid>
         </Grid>
       </Container>
+      <Footer/>
     </div>
   );
 }
