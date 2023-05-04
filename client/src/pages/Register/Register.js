@@ -21,7 +21,7 @@ function Register() {
     password: "",
     bio: "",
     photo: "",
-    interests: "",
+    interests: [],
   });
 
   const [register, { error, data }] = useMutation(REGISTER_USER);
@@ -159,7 +159,7 @@ function Register() {
                     multiline
                   />
                 </Box>
-                <Box
+                {/* <Box
                   component="form"
                   sx={{
                     "& > :not(style)": { m: 1, width: "50ch" },
@@ -176,9 +176,9 @@ function Register() {
                     rows={4}
                     multiline
                   />
-                </Box>
+                </Box> */}
 
-                {/* <FormControlLabel
+                <FormControlLabel
                   control={<Checkbox />}
                   label="Traveling"
                   value="traveling"
@@ -249,7 +249,7 @@ function Register() {
                   label="Technology"
                   value="technology"
                   onChange={handleChecked}
-                /> */}
+                />
 
                 <Button variant="contained" type="submit">
                   Register

@@ -30,6 +30,7 @@ const resolvers = {
         photo,
         interests,
       });
+      console.log(user)
       const token = signToken(user);
       return { token, user };
     },
