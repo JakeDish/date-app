@@ -65,7 +65,7 @@ export default function ProfileCard(props) {
                 </Button>
               </Link>
             ) : (
-              <Link to={`/`}>
+              <Link to={`/login`}>
                 <Button
                   variant="contained"
                   size="medium"

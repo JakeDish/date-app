@@ -1,12 +1,22 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Unstable_Grid2";
+import EmailIcon from "@mui/icons-material/Email";
+import InterestsIcon from "@mui/icons-material/Interests";
+import Avatar from "@mui/material/Avatar";
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import Header from "../../components/Header";
 import Container from "../../components/Container";
 import { QUERY_USER } from "../../utils/queries";
+
+const styles = {
+  iconStyle: {
+    float: "left",
+    marginRight: "10px",
+  },
+};
 
 function Profile() {
   const { userId } = useParams();
@@ -55,14 +65,34 @@ function Profile() {
                   height: "auto",
                 }}
               >
-                <Typography variant="h5">About {user.name}:</Typography>
+                <Typography variant="h5">
+                  <Avatar
+                    alt="Remy Sharp"
+                    src={user.photo}
+                    style={styles.iconStyle}
+                  />
+                  About {user.name}:
+                </Typography>
 
                 <Typography variant="body2">{user.bio}</Typography>
                 <br />
-                <Typography variant="h5">Contact</Typography>
+                <Typography variant="h5">
+                  <EmailIcon
+                    sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+                    style={styles.iconStyle}
+                  />
+                  Contact
+                </Typography>
+
                 <Typography variant="body2">{user.email}</Typography>
                 <br />
-                <Typography variant="h5">Interests</Typography>
+                <Typography variant="h5">
+                  <InterestsIcon
+                    sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+                    style={styles.iconStyle}
+                  />
+                  Interests
+                </Typography>
                 <Typography variant="body2">{user.interests}</Typography>
               </Box>
             </Box>
