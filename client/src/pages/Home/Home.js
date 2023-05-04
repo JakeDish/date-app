@@ -13,7 +13,15 @@ import Couple from "../../img/pexels-photo-1405739.webp";
 
 const Hero = styled.header`
   height: 60vh;
-  background ${`linear-gradient(0deg, rgba(40, 11, 128, 0.8),rgba(40, 11, 128, 0.8)),url(${Couple}) no-repeat center cover;`}
+
+  background ${`
+    linear-gradient(0deg,
+      rgba(40, 11, 128, 0.8),
+      rgba(40, 11, 128, 0.8)
+    ),
+    url(${Couple})
+      no-repeat center center/cover;
+      `}
 `;
 
 const styles = {

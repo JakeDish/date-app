@@ -6,7 +6,6 @@ import Grid from "@mui/material/Unstable_Grid2";
 import Header from "../../components/Header";
 import Container from "../../components/Container";
 import Auth from "../../utils/auth.js";
-import Footer from "../../components/Footer";
 
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
@@ -82,15 +81,12 @@ function Login() {
                   onChange={handleInputChange}
                 />
               </Box>
-              <Button variant="contained" type="submit">
-                Login
-              </Button>
+              <Button variant="contained">Login</Button>
             </form>
           </Grid>
           <Grid xs={4}></Grid>
         </Grid>
       </Container>
-      <Footer/>
     </div>
   );
 }
