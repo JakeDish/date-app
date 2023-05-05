@@ -5,7 +5,7 @@
     "password": "password",
     "bio": "Sarah is a compassionate and dedicated nurse who has been working in the healthcare field for over 10 years. She enjoys helping others and is committed to providing the best care possible to her patients. ",
     "photo": "https://images.pexels.com/photos/1113554/pexels-photo-1113554.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "interests": ["hiking", "travelling"]
+    "interests": ["fitness", "hiking", "travelling"]
   },
   {
     "name": "John",
@@ -13,7 +13,7 @@
     "password": "password",
     "bio": "John is a talented engineer who specializes in mechanical design. He has worked on a variety of projects, including the development of new automotive technologies and the design of advanced robotics systems.",
     "photo": "https://images.pexels.com/photos/2896853/pexels-photo-2896853.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "interests": ["hiking", "travelling"]
+    "interests": ["fitness", "hiking", "travelling"]
   },
   {
     "name": "Emma",
@@ -21,7 +21,7 @@
     "password": "password",
     "bio": "Emma is a talented artist who works in a variety of mediums, including painting, sculpture, and photography. She is known for her unique and expressive style, and her work has been exhibited in galleries around the world.",
     "photo": "https://images.pexels.com/photos/1081685/pexels-photo-1081685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "interests": ["hiking", "travelling"]
+    "interests": ["fitness", "hiking", "travelling"]
   },
   {
     "name": "David",
