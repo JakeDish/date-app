@@ -42,3 +42,24 @@ export const LOGIN_USER = gql`
     }
   }
 `;
+
+export const UPDATE_USER = gql`
+  mutation updateUser(
+    $name: String!
+    $email: String!
+    $password: String!
+    $bio: String!
+    $photo: String!
+    $interests: String!
+  ) {
+    token
+    user {
+      _id
+      name
+      email
+      bio
+      photo
+      interests
+    }
+  }
+`;
