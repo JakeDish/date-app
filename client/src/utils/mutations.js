@@ -57,6 +57,7 @@ export const UPDATE_USER = gql`
       _id
       name
       email
+      password
       bio
       photo
       interests

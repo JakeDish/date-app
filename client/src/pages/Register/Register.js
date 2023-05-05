@@ -43,8 +43,6 @@ function Register() {
   //   }
   // };
 
-  console.log(formState);
-
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -52,7 +50,6 @@ function Register() {
       const { data } = await register({
         variables: { ...formState },
       });
-      console.log(data);
       Auth.login(data.register.token);
     } catch (err) {
       console.error(err);
