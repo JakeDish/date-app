@@ -13,23 +13,25 @@ import { UPDATE_USER } from "../../utils/mutations";
 import Auth from "../../utils/auth.js";
 
 function Dashboard() {
+  const { data } = useQuery(QUERY_ME);
+  const user = data?.me || {};
+
   const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    password: "",
-    bio: "",
-    photo: "",
-    interests: "",
+    name: `${data.me.name}`,
+    email: `${data.me.email}`,
+    // password: `${data.me.password}`,
+    bio: `${data.me.bio}`,
+    photo: `${data.me.photo}`,
+    interests: `${data.me.interests}`,
   });
 
   const [edit] = useMutation(UPDATE_USER);
 
   const handleInput = (e) => {
     let nameOfField = e.target.id;
-    setFormState({ ...formState, [nameOfField]: e.target.innerText });
+    // setFormState({ ...formState, [nameOfField]: e.target.innerText });
+    setFormState((prev) => ({ ...prev, [nameOfField]: e.target.innerText }));
   };
-
-  console.log(formState);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -43,9 +45,6 @@ function Dashboard() {
       console.error(err);
     }
   };
-
-  const { data } = useQuery(QUERY_ME);
-  const user = data?.me || {};
 
   return (
     <div>
