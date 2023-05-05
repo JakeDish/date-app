@@ -18,6 +18,14 @@ const resolvers = {
     },
   },
   Mutation: {
+    updateUser: async (parent, args, context) => {
+      if (context.user) {
+        return await User.findByIdAndUpdate(context.user._id, args, {
+          new: true,
+        });
+      }
+      throw new AuthenticationError("Not logged in");
+    },
     register: async (
       parent,
       { name, email, password, bio, photo, interests }

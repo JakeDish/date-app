@@ -32,6 +32,14 @@ const typeDefs = gql`
       interests: [String!]
     ): Auth
     login(email: String!, password: String!): Auth
+    updateUser(
+      name: String
+      email: String
+      password: String
+      bio: String
+      photo: String
+      interests: String
+    ): User
   }
 `;
 
