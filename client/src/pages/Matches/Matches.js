@@ -42,6 +42,7 @@ function Matches() {
         <Typography variant="h3" align="center">
           {user.name}, here are your matches!
         </Typography>
+
         {/* dynamically render */}
         <div style={{ display: "flex", marginTop: "40px" }}>
           {allusers && (
@@ -68,6 +69,17 @@ function Matches() {
                           </Typography>
                           <Typography variant="body2" color="text.secondary">
                             {item.bio}
+                          </Typography>
+                          <Typography variant="h6" color="text.secondary">
+                            Interests:
+                          </Typography>
+
+                          <Typography variant="body2" color="text.secondary">
+                            <ul>
+                              {item.interests.map((item) => {
+                                return <li>{item}</li>;
+                              })}
+                            </ul>
                           </Typography>
                           <Link to={`/profile/${item._id}`}>
                             <Button
