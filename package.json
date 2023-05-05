@@ -2,6 +2,10 @@
   "name": "merntemplate",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "npm": "8.x",
+    "node": "16.x"
+  },
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
