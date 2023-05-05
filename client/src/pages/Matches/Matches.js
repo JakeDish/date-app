@@ -2,7 +2,6 @@ import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Heart from "@mui/icons-material/FavoriteBorder";
 import Header from "../../components/Header";
 import Container from "../../components/Container";
 import Button from "@mui/material/Button";
