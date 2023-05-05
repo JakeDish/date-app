@@ -4,6 +4,9 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Header from "../../components/Header";
 import Container from "../../components/Container";
+import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
+import Footer from "../../components/Footer";
 
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../../utils/queries";
@@ -25,47 +28,151 @@ function Matches() {
     allusers = data.users;
   }
 
+  // check for matches
+  let isMatch = (parentArray, subsetArray) => {
+    return subsetArray.every((el) => {
+      return parentArray.includes(el);
+    });
+  };
+
   return (
     <>
       <Header />
       <Container>
         <Typography variant="h3" align="center">
-          {" "}
-          Your Matches
+          {user.name}, here are your matches!
         </Typography>
         {/* dynamically render */}
-        {allusers && (
-          <>
-            {allusers.map((item) => {
-              // console.log(item.interests);
-              if (
-                userInterests.includes(item.interests) &&
-                user._id !== item._id
-              ) {
-                return (
-                  <>
-                    <Card sx={{ maxWidth: 345 }} key={item._id}>
-                      <CardMedia
-                        sx={{ height: 240 }}
-                        image={item.photo}
-                        title="green iguana"
-                      />
-                      <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                          {item.name}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                          {item.bio}
-                        </Typography>
-                      </CardContent>
-                    </Card>
-                  </>
-                );
-              }
-            })}
-          </>
-        )}
+        <div style={{ display: "flex", marginTop: "40px" }}>
+          {allusers && (
+            <>
+              {allusers.map((item) => {
+                if (
+                  isMatch(user.interests, item.interests) &&
+                  user._id !== item._id
+                ) {
+                  return (
+                    <>
+                      <Card
+                        sx={{ maxWidth: 345, marginRight: "40px" }}
+                        key={item._id}
+                      >
+                        <CardMedia
+                          sx={{ height: 240 }}
+                          image={item.photo}
+                          title="green iguana"
+                        />
+                        <CardContent>
+                          <Typography gutterBottom variant="h5" component="div">
+                            {item.name}
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            {item.bio}
+                          </Typography>
+                          <Link to={`/profile/${item._id}`}>
+                            <Button
+                              variant="contained"
+                              size="medium"
+                              style={{
+                                backgroundColor: "#0E34A0",
+                                color: "white",
+                                marginTop: "20px",
+                              }}
+                            >
+                              View Profile
+                            </Button>
+                          </Link>
+                          <br />
+                          <a
+                            href={`mailto:${item.email}`}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <Button
+                              variant="outlined"
+                              size="medium"
+                              style={{
+                                color: "white",
+                                marginTop: "20px",
+                              }}
+                            >
+                              Contact
+                            </Button>
+                          </a>
+                        </CardContent>
+                      </Card>
+                    </>
+                  );
+                }
+              })}
+            </>
+          )}
+          {/* {allusers && (
+            <>
+              {allusers.map((item) => {
+                if (
+                  userInterests.includes(item.interests) &&
+                  user._id !== item._id
+                ) {
+                  return (
+                    <>
+                      <Card
+                        sx={{ maxWidth: 345, marginRight: "40px" }}
+                        key={item._id}
+                      >
+                        <CardMedia
+                          sx={{ height: 240 }}
+                          image={item.photo}
+                          title="green iguana"
+                        />
+                        <CardContent>
+                          <Typography gutterBottom variant="h5" component="div">
+                            {item.name}
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            {item.bio}
+                          </Typography>
+                          <Link to={`/profile/${item._id}`}>
+                            <Button
+                              variant="contained"
+                              size="medium"
+                              style={{
+                                backgroundColor: "#0E34A0",
+                                color: "white",
+                                marginTop: "20px",
+                              }}
+                            >
+                              View Profile
+                            </Button>
+                          </Link>
+                          <br />
+                          <a
+                            href={`mailto:${item.email}`}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <Button
+                              variant="outlined"
+                              size="medium"
+                              style={{
+                                color: "white",
+                                marginTop: "20px",
+                              }}
+                            >
+                              Contact
+                            </Button>
+                          </a>
+                        </CardContent>
+                      </Card>
+                    </>
+                  );
+                }
+              })}
+            </>
+          )} */}
+        </div>
       </Container>
+      <Footer />
     </>
   );
 }

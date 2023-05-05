@@ -1,34 +1,92 @@
 [
   {
-    "name": "Jake",
-    "email": "jake@gmail.com",
+    "name": "Sarah",
+    "email": "sarah@gmail.com",
     "password": "password",
-    "bio": "Chewbacca, known affectionately to his friends as Chewie, was a Wookiee male warrior, smuggler, mechanic, pilot, and resistance fighter who fought in the Clone Wars, the Galactic Civil War, the Cold War, and the subsequent First Order-Resistance War. He hailed from the planet Kashyyyk and became a Wookiee military leader. During the Clone Wars, he was captured by Trandoshan slavers and held captive on Wasskah, but he worked with a fellow captive, Jedi Commander Ahsoka Tano, to escape. ",
-    "photo": "https://static.wikia.nocookie.net/starwars/images/4/48/Chewbacca_TLJ.png",
-    "interests": "hiking, travelling"
+    "bio": "Sarah is a compassionate and dedicated nurse who has been working in the healthcare field for over 10 years. She enjoys helping others and is committed to providing the best care possible to her patients. ",
+    "photo": "https://images.pexels.com/photos/1113554/pexels-photo-1113554.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "interests": ["hiking", "travelling"]
   },
   {
-    "name": "Gabriel",
-    "email": "gabriel@gmail.com",
+    "name": "John",
+    "email": "john@gmail.com",
     "password": "password",
-    "bio": "Anakin Skywalker was a legendary Force-sensitive human male who was a Jedi Knight of the Galactic Republic and the prophesied Chosen One of the Jedi Order, destined to bring balance to the Force. Also known as 'Ani' during his childhood, Skywalker earned the moniker 'Hero With No Fear' from his accomplishments in the Clone Wars. His alter ego, Darth Vader, the Dark Lord of the Sith, was created when Skywalker turned to the dark side of the Force, pledging his allegiance to the Sith Lord Darth Sidious at the end of the Republic Era.",
-    "photo": "https://static.wikia.nocookie.net/starwars/images/6/6f/Anakin_Skywalker_RotS.png",
-    "interests": "hiking, travelling, gaming"
+    "bio": "John is a talented engineer who specializes in mechanical design. He has worked on a variety of projects, including the development of new automotive technologies and the design of advanced robotics systems.",
+    "photo": "https://images.pexels.com/photos/2896853/pexels-photo-2896853.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "interests": ["hiking", "travelling"]
   },
   {
-    "name": "Sia",
-    "email": "sia@gmail.com",
+    "name": "Emma",
+    "email": "emma@gmail.com",
     "password": "password",
-    "bio": "Merrin was a Dathomirian Nightsister who lived on her homeworld of Dathomir during the Imperial Era. A survivor of General Grievous' massacre of the Nightsisters during the Clone Wars, Merrin encountered the Jedi Master Taron Malicos after he crash-landed on Dathomir following the execution of Order 66 in 19 BBY, which called for the extermination of all Jedi. Malicos fell to the dark side of the Force, and wishing to learn the Nightsister's magick, he manipulated Merrin through lies that the Jedi were responsible for her losses and false promises to help her avenge her fallen friends, sisters, and mothers.",
-    "photo": "https://static.wikia.nocookie.net/starwars/images/f/fb/Merrin_SWJediSurvivor.png",
-    "interests": "gaming, travelling"
+    "bio": "Emma is a talented artist who works in a variety of mediums, including painting, sculpture, and photography. She is known for her unique and expressive style, and her work has been exhibited in galleries around the world.",
+    "photo": "https://images.pexels.com/photos/1081685/pexels-photo-1081685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "interests": ["hiking", "travelling"]
   },
   {
-    "name": "Eric",
-    "email": "eric@gmail.com",
+    "name": "David",
+    "email": "david@gmail.com",
     "password": "password",
-    "bio": "BB-8, sometimes spelled and pronounced Beebee-Ate and nicknamed BB, was a BB-series astromech droid who operated approximately thirty years after the Battle of Endor. He had a dome head, similar to that of R2 series astromech droids, with the bulk of his body made up of a ball on which the droid's head rolled. BB-8 was mostly white, with some silver and orange on his body, as well as a black photoreceptor. The droid belonged to Resistance pilot Poe Dameron, whom he accompanied during his flights on his T-70 X-wing starfighter.",
-    "photo": "https://static.wikia.nocookie.net/starwars/images/6/68/BB8-Fathead.png",
-    "interests": "hiking, travelling, music"
+    "bio": "David is a skilled software developer who has been working in the industry for over 5 years. He is passionate about technology and enjoys working on challenging projects that push the boundaries of what is possible.",
+    "photo": "https://images.pexels.com/photos/1656684/pexels-photo-1656684.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "interests": ["music", "fashion"]
+  },
+  {
+    "name": "Lisa",
+    "email": "lisa@gmail.com",
+    "password": "password",
+    "bio": "Lisa is a talented lawyer who specializes in corporate law. She has worked with a variety of clients, including large corporations and small startups, and is known for her strategic thinking and attention to detail.",
+    "photo": "https://images.pexels.com/photos/1036622/pexels-photo-1036622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "interests": ["music", "fashion"]
+  },
+
+  {
+    "name": "Mike",
+    "email": "mike@gmail.com",
+    "password": "password",
+    "bio": " Mike is an experienced chef who has worked in some of the best restaurants around the world. He is passionate about using fresh and seasonal ingredients to create innovative and delicious dishes that delight his customers.",
+    "photo": "https://images.pexels.com/photos/3206117/pexels-photo-3206117.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "interests": ["fitness", "cooking", "music"]
+  },
+
+  {
+    "name": "Kelly",
+    "email": "Kelly@gmail.com",
+    "password": "password",
+    "bio": " Kelly is a dedicated teacher who has been working in the education field for over 15 years. She is passionate about helping her students learn and grow, and is known for her creative and engaging teaching style.",
+    "photo":
+"https://images.pexels.com/photos/718978/pexels-photo-718978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "interests": ["fitness", "cooking", "music"]
+    },
+
+  {
+    "name": "Andrew",
+    "email": "andrew@gmail.com",
+    "password": "password",
+    "bio": "Andrew is a skilled accountant who specializes in tax preparation and financial planning. He has worked with a variety of clients, including individuals and small businesses, and is known for his attention to detail and thoroughness.",
+    "photo":
+"https://images.pexels.com/photos/2772535/pexels-photo-2772535.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+ "interests": ["reading", "skiing", "sports"]
+  },
+
+  {
+    "name": "Rachel",
+    "email": "rachel@gmail.com",
+    "password": "password",
+    "bio": "Rachel is an award-winning journalist who has worked for some of the biggest news organizations in the world. She is passionate about uncovering the truth and telling stories that matter, and is known for her fearlessness and tenacity.",
+    "photo":
+"https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+"interests": ["reading", "skiing", "sports"]
+  },
+
+   {
+    "name": "James",
+    "email": "james@gmail.com",
+    "password": "password",
+    "bio": "James is a successful entrepreneur who has founded several startups in the technology and finance industries. He is passionate about innovation and is always looking for new and exciting opportunities to create value for his customers.",
+    "photo":
+"https://images.pexels.com/photos/6968548/pexels-photo-6968548.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+"interests": "[ technology, botany]"
   }
+
 ]

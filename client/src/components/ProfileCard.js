@@ -5,14 +5,13 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Unstable_Grid2";
 
 export default function ProfileCard(props) {
-  console.log(props);
   return (
     <Grid container spacing={2}>
       <Grid xs={3}></Grid>
       <Grid xs={6}>
         <div
           style={{
-            border: "1px solid gray",
+            border: "3px solid #5F5980",
             borderRadius: "8px",
             margin: "20px 0",
             display: "flex",
@@ -60,7 +59,15 @@ export default function ProfileCard(props) {
             </Typography>
             {props.loggedIn ? (
               <Link to={`/profile/${props.singleUser}`}>
-                <Button variant="contained" size="medium">
+                <Button
+                  variant="contained"
+                  size="medium"
+                  style={{
+                    backgroundColor: "#0E34A0",
+                    color: "white",
+                    marginTop: "20px",
+                  }}
+                >
                   View Profile
                 </Button>
               </Link>
@@ -69,9 +76,13 @@ export default function ProfileCard(props) {
                 <Button
                   variant="contained"
                   size="medium"
-                  style={{ backgroundColor: "#bcced1", color: "black" }}
+                  style={{
+                    backgroundColor: "#0E34A0",
+                    color: "white",
+                    marginTop: "20px",
+                  }}
                 >
-                  Please Login to View Profile
+                  Login to View Profile
                 </Button>
               </Link>
             )}

@@ -4,12 +4,13 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Unstable_Grid2";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import Checkbox from "@mui/material/Checkbox";
 import Button from "@mui/material/Button";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Container from "../../components/Container";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 import { REGISTER_USER } from "../../utils/mutations";
 import Auth from "../../utils/auth.js";
@@ -24,7 +25,7 @@ function Register() {
     interests: [],
   });
 
-  const [register, { error, data }] = useMutation(REGISTER_USER);
+  const [register] = useMutation(REGISTER_USER);
 
   const handleInputChange = ({ target: { name, value } }) => {
     setFormState({ ...formState, [name]: value });
@@ -67,7 +68,7 @@ function Register() {
           <Grid xs={4}></Grid>
           <Grid xs={4}>
             <Typography variant="h3">Register</Typography>
-            <FormGroup>
+            <FormGroup sx={{ margin: "20px 0" }}>
               <form onSubmit={handleFormSubmit}>
                 <Box
                   component="form"
@@ -251,7 +252,11 @@ function Register() {
                   onChange={handleChecked}
                 />
 
-                <Button variant="contained" type="submit">
+                <Button
+                  variant="contained"
+                  type="submit"
+                  sx={{ marginTop: "20px" }}
+                >
                   Register
                 </Button>
               </form>
@@ -260,6 +265,7 @@ function Register() {
           <Grid xs={4}></Grid>
         </Grid>
       </Container>
+      <Footer />
     </div>
   );
 }

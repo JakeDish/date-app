@@ -4,6 +4,7 @@ import Grid from "@mui/material/Unstable_Grid2";
 import Typography from "@mui/material/Typography";
 import Header from "../../components/Header";
 import Container from "../../components/Container";
+import Footer from "../../components/Footer";
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../../utils/queries";
 
@@ -64,6 +65,7 @@ function Dashboard() {
           <Grid xs={2}></Grid>
         </Grid>
       </Container>
+      <Footer />
     </div>
   );
 }

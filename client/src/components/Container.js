@@ -5,7 +5,8 @@ function Container(props) {
     <Box
       sx={{
         width: "auto",
-        padding: "40px",
+        padding: "40px 80px 120px 80px",
+        minHeight: "100vh",
       }}
     >
       {props.children}
