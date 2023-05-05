@@ -65,7 +65,7 @@ function Dashboard() {
           <Grid xs={2}></Grid>
         </Grid>
       </Container>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

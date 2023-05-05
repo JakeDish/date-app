@@ -26,9 +26,9 @@ const userSchema = new Schema({
     type: String,
     // required: true,
   },
-  interests: {
+  interests: [{
     type: String,
-  },
+  }],
 });
 
 userSchema.pre("save", async function (next) {

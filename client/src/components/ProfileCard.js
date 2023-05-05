@@ -5,7 +5,6 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Unstable_Grid2";
 
 export default function ProfileCard(props) {
-  console.log(props);
   return (
     <Grid container spacing={2}>
       <Grid xs={3}></Grid>
