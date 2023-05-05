@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Unstable_Grid2";
 import Typography from "@mui/material/Typography";
@@ -9,8 +9,24 @@ import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../../utils/queries";
 
 function Dashboard() {
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    password: "",
+    bio: "",
+    photo: "",
+    interests: "",
+  });
+
   const { data } = useQuery(QUERY_ME);
   const user = data?.me || {};
+
+  const handleInput = (e) => {
+    let nameOfField = e.target.id;
+    setFormState({ ...formState, [nameOfField]: e.target.innerText });
+  };
+
+  console.log(formState);
 
   return (
     <div>
@@ -50,22 +66,52 @@ function Dashboard() {
                   height: "auto",
                 }}
               >
-                <Typography variant="h5">About {user.name}:</Typography>
-
-                <Typography variant="body2">{user.bio}</Typography>
+                Name:
+                <Typography
+                  variant="h5"
+                  contenteditable="true"
+                  onInput={handleInput}
+                  id="name"
+                >
+                  {user.name}
+                </Typography>
                 <br />
-                <Typography variant="h5">Contact</Typography>
-                <Typography variant="body2">{user.email}</Typography>
+                Bio:
+                <Typography
+                  variant="body2"
+                  contenteditable="true"
+                  onInput={handleInput}
+                  id="bio"
+                >
+                  {user.bio}
+                </Typography>
                 <br />
-                <Typography variant="h5">Interests</Typography>
-                <Typography variant="body2">{user.interests}</Typography>
+                Email:
+                <Typography
+                  variant="body2"
+                  contenteditable="true"
+                  onInput={handleInput}
+                  id="email"
+                >
+                  {user.email}
+                </Typography>
+                <br />
+                Interests:
+                <Typography
+                  variant="body2"
+                  contenteditable="true"
+                  onInput={handleInput}
+                  id="interests"
+                >
+                  {user.interests}
+                </Typography>
               </Box>
             </Box>
           </Grid>
           <Grid xs={2}></Grid>
         </Grid>
       </Container>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
