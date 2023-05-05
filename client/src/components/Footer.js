@@ -12,9 +12,10 @@ const styles = {
     color: "white",
   },
   text: {
-    fontSize: "14px",
+    fontSize: "10px",
     color: "white",
     textAlign: "center",
+    
   },
 };
 
@@ -24,6 +25,8 @@ export default function Footer() {
   return (
     <Box
       sx={{
+        padding: "5px 0",
+        backgroundColor: "#1E1E3D",
         width: "100%",
         position: "fixed",
         bottom: "0",
@@ -32,7 +35,7 @@ export default function Footer() {
       }}
     >
       <BottomNavigation
-        sx={{ backgroundColor: "#1E1E3D", padding: "16px 0" }}
+        sx={{ backgroundColor: "#1E1E3D", height: "0" }}
         showLabels
         value={value}
         onChange={(event, newValue) => {
@@ -41,7 +44,7 @@ export default function Footer() {
       >
         <Link to="https://github.com/JakeDish" target="_blank">
           <Box
-            sx={{
+            sx={{ 
               display: "flex",
               flexDirection: "column",
             }}

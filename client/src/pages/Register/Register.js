@@ -8,6 +8,7 @@ import Button from "@mui/material/Button";
 import FormGroup from "@mui/material/FormGroup";
 import Container from "../../components/Container";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 import { REGISTER_USER } from "../../utils/mutations";
 import Auth from "../../utils/auth.js";
@@ -245,6 +246,7 @@ function Register() {
           <Grid xs={4}></Grid>
         </Grid>
       </Container>
+      <Footer/>
     </div>
   );
 }
