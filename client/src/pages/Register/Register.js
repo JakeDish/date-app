@@ -179,6 +179,8 @@ function Register() {
                   />
                 </Box> */}
 
+                <Typography variant="h5">Interests:</Typography>
+
                 <FormControlLabel
                   control={<Checkbox />}
                   label="Traveling"
@@ -251,7 +253,7 @@ function Register() {
                   value="technology"
                   onChange={handleChecked}
                 />
-
+                <br />
                 <Button
                   variant="contained"
                   type="submit"
