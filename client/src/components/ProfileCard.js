@@ -63,7 +63,11 @@ export default function ProfileCard(props) {
                 <Button
                   variant="contained"
                   size="medium"
-                  style={{ backgroundColor: "#0E34A0", color: "white" }}
+                  style={{
+                    backgroundColor: "#0E34A0",
+                    color: "white",
+                    marginTop: "20px",
+                  }}
                 >
                   View Profile
                 </Button>
@@ -73,7 +77,11 @@ export default function ProfileCard(props) {
                 <Button
                   variant="contained"
                   size="medium"
-                  style={{ backgroundColor: "#0E34A0", color: "white" }}
+                  style={{
+                    backgroundColor: "#0E34A0",
+                    color: "white",
+                    marginTop: "20px",
+                  }}
                 >
                   Login to View Profile
                 </Button>

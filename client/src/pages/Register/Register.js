@@ -53,7 +53,7 @@ function Register() {
           <Grid xs={4}></Grid>
           <Grid xs={4}>
             <Typography variant="h3">Register</Typography>
-            <FormGroup>
+            <FormGroup sx={{ margin: "20px 0" }}>
               <form onSubmit={handleFormSubmit}>
                 <Box
                   component="form"
@@ -237,7 +237,11 @@ function Register() {
                   onChange={handleChecked}
                 /> */}
 
-                <Button variant="contained" type="submit">
+                <Button
+                  variant="contained"
+                  type="submit"
+                  sx={{ marginTop: "20px" }}
+                >
                   Register
                 </Button>
               </form>
@@ -246,7 +250,7 @@ function Register() {
           <Grid xs={4}></Grid>
         </Grid>
       </Container>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
