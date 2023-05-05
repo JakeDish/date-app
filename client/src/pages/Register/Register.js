@@ -6,8 +6,6 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import FormGroup from "@mui/material/FormGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Container from "../../components/Container";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -25,25 +23,25 @@ function Register() {
     interests: "",
   });
 
-  const [register, { error, data }] = useMutation(REGISTER_USER);
+  const [register] = useMutation(REGISTER_USER);
 
   const handleInputChange = ({ target: { name, value } }) => {
     setFormState({ ...formState, [name]: value });
   };
 
-  const handleChecked = (e) => {
-    const { value, checked } = e.target;
-    const { interests } = formState;
+  // const handleChecked = (e) => {
+  //   const { value, checked } = e.target;
+  //   const { interests } = formState;
 
-    if (checked) {
-      setFormState((prev) => ({ ...prev, interests: [...interests, value] }));
-    } else {
-      setFormState((prev) => ({
-        ...prev,
-        interests: interests.filter((e) => e !== value),
-      }));
-    }
-  };
+  //   if (checked) {
+  //     setFormState((prev) => ({ ...prev, interests: [...interests, value] }));
+  //   } else {
+  //     setFormState((prev) => ({
+  //       ...prev,
+  //       interests: interests.filter((e) => e !== value),
+  //     }));
+  //   }
+  // };
 
   console.log(formState);
 
@@ -68,7 +66,7 @@ function Register() {
           <Grid xs={4}></Grid>
           <Grid xs={4}>
             <Typography variant="h3">Register</Typography>
-            <FormGroup>
+            <FormGroup sx={{ margin: "20px 0" }}>
               <form onSubmit={handleFormSubmit}>
                 <Box
                   component="form"
@@ -252,7 +250,11 @@ function Register() {
                   onChange={handleChecked}
                 /> */}
 
-                <Button variant="contained" type="submit">
+                <Button
+                  variant="contained"
+                  type="submit"
+                  sx={{ marginTop: "20px" }}
+                >
                   Register
                 </Button>
               </form>
@@ -261,7 +263,7 @@ function Register() {
           <Grid xs={4}></Grid>
         </Grid>
       </Container>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
