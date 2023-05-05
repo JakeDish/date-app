@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import Typography from "@mui/material/Typography";
+import ArrowDown from "@mui/icons-material/ExpandMore";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import ProfileCard from "../../components/ProfileCard";
@@ -10,6 +12,7 @@ import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../../utils/queries";
 import { QUERY_USERS } from "../../utils/queries";
 import Couple from "../../img/pexels-photo-1405739.webp";
+import "animate.css";
 
 const Hero = styled.header`
   height: 60vh;
@@ -78,6 +81,18 @@ function Home() {
                       View Your Dashboard
                     </Button>
                   </Link>
+                  <br />
+                  <ScrollLink to="#start" smooth={true} duration={500}>
+                    <ArrowDown
+                      style={{
+                        width: 50,
+                        height: 50,
+                        cursor: "pointer",
+                        marginTop: "40px",
+                      }}
+                      className="animate__animated animate__slideInDown animate__fast animate__repeat-2"
+                    />
+                  </ScrollLink>
                 </Typography>
               </>
             ) : (
@@ -96,12 +111,25 @@ function Home() {
                     Login
                   </Button>
                 </Link>
+                <br />
+                <ScrollLink to="#start" smooth={true} duration={500}>
+                  <ArrowDown
+                    style={{
+                      width: 50,
+                      height: 50,
+                      cursor: "pointer",
+                      marginTop: "40px",
+                    }}
+                    className="animate__animated animate__slideInDown animate__fast animate__repeat-2"
+                  />
+                </ScrollLink>
               </Typography>
             )}
           </div>
         </div>
       </Hero>
       <Container>
+        <div id="#start"></div>
         {/* Render all users in ProfileCard component */}
         {allusers
           ? allusers.map((singleUser) => {
