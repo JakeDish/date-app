@@ -28,8 +28,10 @@ function Profile() {
 
   const user = data?.user || {};
 
+  console.log(user);
+
   return (
-    <div>
+    <>
       <Header />
       <Container>
         <Grid container spacing={2}>
@@ -94,15 +96,25 @@ function Profile() {
                   />
                   Interests
                 </Typography>
-                <Typography variant="body2">{user.interests}</Typography>
+
+                {data &&
+                  user.interests.map((item) => {
+                    return (
+                      <ul style={{ marginLeft: "-22px" }}>
+                        <li style={{ marginTop: "-14px" }}>
+                          <Typography variant="body2">{item}</Typography>
+                        </li>
+                      </ul>
+                    );
+                  })}
               </Box>
             </Box>
           </Grid>
           <Grid xs={2}></Grid>
         </Grid>
       </Container>
-      <Footer/>
-    </div>
+      <Footer />
+    </>
   );
 }
 

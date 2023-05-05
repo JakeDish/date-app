@@ -17,7 +17,6 @@
     "concurrently": "^7.6.0"
   },
   "dependencies": {
-    "animate.css": "^4.1.1",
-    "image-blur-gaussian": "^0.0.115"
+    "animate.css": "^4.1.1"
   }
 }
