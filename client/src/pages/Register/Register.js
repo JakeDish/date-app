@@ -4,8 +4,10 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Unstable_Grid2";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import Checkbox from "@mui/material/Checkbox";
 import Button from "@mui/material/Button";
 import FormGroup from "@mui/material/FormGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
 import Container from "../../components/Container";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -20,7 +22,7 @@ function Register() {
     password: "",
     bio: "",
     photo: "",
-    interests: "",
+    interests: [],
   });
 
   const [register] = useMutation(REGISTER_USER);
@@ -29,19 +31,19 @@ function Register() {
     setFormState({ ...formState, [name]: value });
   };
 
-  // const handleChecked = (e) => {
-  //   const { value, checked } = e.target;
-  //   const { interests } = formState;
+  const handleChecked = (e) => {
+    const { value, checked } = e.target;
+    const { interests } = formState;
 
-  //   if (checked) {
-  //     setFormState((prev) => ({ ...prev, interests: [...interests, value] }));
-  //   } else {
-  //     setFormState((prev) => ({
-  //       ...prev,
-  //       interests: interests.filter((e) => e !== value),
-  //     }));
-  //   }
-  // };
+    if (checked) {
+      setFormState((prev) => ({ ...prev, interests: [...interests, value] }));
+    } else {
+      setFormState((prev) => ({
+        ...prev,
+        interests: interests.filter((e) => e !== value),
+      }));
+    }
+  };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -155,7 +157,7 @@ function Register() {
                     multiline
                   />
                 </Box>
-                <Box
+                {/* <Box
                   component="form"
                   sx={{
                     "& > :not(style)": { m: 1, width: "50ch" },
@@ -172,9 +174,11 @@ function Register() {
                     rows={4}
                     multiline
                   />
-                </Box>
+                </Box> */}
 
-                {/* <FormControlLabel
+                <Typography variant="h5">Interests:</Typography>
+
+                <FormControlLabel
                   control={<Checkbox />}
                   label="Traveling"
                   value="traveling"
@@ -245,8 +249,8 @@ function Register() {
                   label="Technology"
                   value="technology"
                   onChange={handleChecked}
-                /> */}
-
+                />
+                <br />
                 <Button
                   variant="contained"
                   type="submit"
