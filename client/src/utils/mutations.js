@@ -45,21 +45,27 @@ export const LOGIN_USER = gql`
 
 export const UPDATE_USER = gql`
   mutation updateUser(
-    $name: String!
-    $email: String!
-    $password: String!
-    $bio: String!
-    $photo: String!
-    $interests: String!
+    $name: String
+    $email: String
+    $password: String
+    $bio: String
+    $photo: String
+    $interests: String
   ) {
-    token
-    user {
+    updateUser(
+      name: $name
+      email: $email
+      password: $password
+      bio: $bio
+      photo: $photo
+      interests: $interests
+    ) {
       _id
       name
       email
       password
-      bio
       photo
+      bio
       interests
     }
   }
