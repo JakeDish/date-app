@@ -22,13 +22,13 @@ We have utilized cutting-edge technologies such as React, GraphQL with Node.js, 
 
 ## Deployed-Application
 
-[Deployed Application]()
+[Deployed Application](https://matchmakerdating.herokuapp.com/)
 
 ## Screen-Shots
 
-![Homepage](images/Screenshot_2023-05-05_at_11.18.05_AM.png)
+![homepage](images/Screenshot_2023-05-05_at_11.18.05_AM.png)
 ![login](images/Screenshot_2023-05-05_at_11.18.43_AM.png)
 ![matches](images/Screenshot_2023-05-05_at_11.19.40_AM.png)
-
-![Wireframe](images/Screenshot_2023-05-05_at_11.18.05_AM.png)
+![register](images/register.png)
+<!-- ![Wireframe](images/Screenshot_2023-05-05_at_11.18.05_AM.png) -->
 ![Wireframe](images/wireframe2.PNG)
