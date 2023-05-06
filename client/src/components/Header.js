@@ -64,17 +64,19 @@ export default function Header() {
           <Link to="/register" style={styles.links}>
             {user ? "" : <Button color="inherit">Register </Button>}
           </Link>
-          <Button color="inherit" onClick={() => Auth.logout()}>
-            {user ? (
+          {user ? (
+            <Button color="inherit" onClick={() => Auth.logout()}>
               <Link to="/" style={styles.links}>
                 Logout
               </Link>
-            ) : (
+            </Button>
+          ) : (
+            <Button color="inherit">
               <Link to="/login" style={styles.links}>
                 Login
               </Link>
-            )}
-          </Button>{" "}
+            </Button>
+          )}
           {user ? (
             <Link to="/dashboard">
               <Avatar alt="Remy Sharp" src={user.photo} />
