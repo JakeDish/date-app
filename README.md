@@ -41,7 +41,10 @@ We have utilized cutting-edge technologies such as React, GraphQL with Node.js, 
 [![Contributors Github Links](https://skillicons.dev/icons?i=github)](https://skillicons.dev)
 
 [Jake](https://github.com/JakeDish)
+
 [Sia](https://github.com/siahmoymajid)
+
 [Gabriel](https://github.com/Sm3gma)
+
 [Eric](https://github.com/ericnguyen23)
 
